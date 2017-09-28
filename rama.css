@@ -1,0 +1,563 @@
+/*
+css reset
+*/
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/*Global styles*/
+
+body {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  font-size: 100%;
+  line-height: 1.4em;
+}
+
+h1 {
+  font-size: .85em;
+  color: black;
+  line-height: 1.25em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.2em;
+  margin: .5em;
+  line-height: 1.2em;
+}
+
+section {
+  width: 85%;
+  margin: auto auto;
+}
+
+p {
+  font-size: 1em;
+  margin: auto auto;
+}
+
+header ul {
+  font-size: 1em;
+}
+
+
+/* This is all for the header/nav */
+
+.header {
+  background-color: rgba(255, 255, 255, .85);
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: transparent;
+  width: 100%;
+}
+
+.header li a, .header2 li a {
+  display: block;
+  padding: 1em 1em;
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+}
+
+.header li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header .logo {
+  display: flex;
+  float: left;
+  font-size: 1.3em;
+  padding: 0.625em 1.25em;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 1.75em .75em;
+  position: relative;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 0.2em;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 1.75em;
+}
+
+.header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 0.55em;
+}
+
+.header .menu-icon .navicon:after {
+  top: -0.55em;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked~.menu {
+  max-height: 15em;
+}
+
+
+/* Logo */
+
+a.logo {
+  float: right;
+  width: 65%;
+  height: 2em;
+}
+
+a.logo img {
+  float: left;
+  padding-right: 1em;
+}
+
+
+/* image */
+
+.girls {
+  width: 100%;
+}
+
+
+/* Bottom Menu */
+
+.header2 ul {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header2 ul .who {
+  background-color: rgb(196, 195, 155);
+}
+
+.header2 ul .who:hover {
+  background-color: rgba(196, 195, 155, .7);
+}
+
+.header2 ul .what {
+  background-color: rgb(225, 211, 147);
+}
+
+.header2 ul .what:hover {
+  background-color: rgba(225, 211, 147, .7);
+}
+
+.header2 ul .getInvolved {
+  background-color: rgb(225, 151, 79);
+}
+
+.header2 ul .getInvolved:hover {
+  background-color: rgba(225, 151, 79, .7);
+}
+
+.header2 ul li {
+  height: auto;
+  margin: .5em;
+}
+
+.header2 ul li a {
+  height: 7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Acoordion mechanism*/
+
+.accordion [type=checkbox] {
+  display: none;
+}
+
+.accordion ul li {
+  overflow: hidden;
+}
+
+.accordion ul li .content {
+  height: 0em;
+}
+
+.accordion [type=checkbox]:checked~label~.content {
+  height: 100%;
+}
+
+
+/* Make buttons bigger*/
+
+label.bigbutton {
+  position: relative;
+  display: block;
+  font-weight: bold;
+  /*line-height: 9.5em;*/
+  padding-top: 4em;
+  padding-bottom: 4em;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: .6em solid white;
+}
+
+
+/* Form styles */
+
+form {
+  border-top: .5em solid white;
+  border-bottom: .5em solid white;
+}
+
+.accordion {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.accordion ul {
+  padding: .5em;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accordion li {
+  list-style-type: none;
+  list-style: none;
+}
+
+fieldset {
+  display: block;
+  margin: 1.0em auto;
+}
+
+legend {
+  text-align: center;
+  margin-bottom: 2em;
+  text-decoration: underline;
+}
+
+input:not([type=radio]), select {
+  width: 100%;
+  height: 3em;
+  margin: auto;
+  box-sizing: border-box;
+  border: .2em solid #ccc;
+  transition: 0.5s;
+  outline: none;
+}
+
+input {
+  font-size: 1em;
+}
+
+textarea {
+  width: 100%;
+  height: 9.4em;
+  padding: .75em 1.25em;
+  margin: .5em 0;
+  box-sizing: border-box;
+  border: .2em solid #ccc;
+  font-size: 1em;
+  resize: none;
+  outline: none;
+}
+
+.accordion input[type=text]:focus {
+  border: .25em solid #555;
+}
+
+.accordion input[type=tel]:focus {
+  border: .25em solid #555;
+}
+
+.accordion input:focus {
+  border: .25em solid #555;
+}
+
+.accordion textarea:focus {
+  border: .25em solid #555;
+}
+
+.accordion input[type=submit] {
+  background-color: rgba(112, 128, 144, 1);
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  text-decoration: none;
+  margin: 0.25em 0.125em;
+  cursor: pointer;
+}
+
+.accordion input:hover:not(.active)[type=submit] {
+  background-color: rgba(112, 128, 144, .75);
+}
+.accordion input[type=radio] {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+
+/* Colors for buttons*/
+
+.give {
+  background-color: rgb(196, 195, 155);
+}
+
+.contactUs {
+  background-color: rgb(225, 211, 147);
+}
+
+.subscribe {
+  background-color: rgb(225, 151, 79);
+}
+
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(169, 169, 169);
+  font-size: .60em;
+  font-style: italic;
+  text-align: center;
+  padding: 1em;
+  display: block;
+}
+
+
+/* MEDIA QUERIES*/
+
+
+/* @media screen and (max-width: 768px) {
+
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 1.25em 1.875em;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+*/
+
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+   p {
+     font-size: 1.25em;
+   }
+   section {
+     width: 87vw;
+     margin-bottom: 1.5em;
+   }
+  .header ul {
+    display: flex;
+    width: 100%;
+  }
+  .header li {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    text-align: center;
+  }
+  .header a {
+    display: flex;
+    width: 100%;
+    padding: 1.25em 1.875em;
+  }
+  .header .menu {
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+  label, legend {
+    font-size: 1.25em;
+  }
+  .accordion input {
+    margin: 1.25em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .accordion input[type=radio] {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+      margin-right: 1.2em;
+  }
+  .accordion input[type=submit] {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.7em;
+  }
+  p {
+    font-size: 1.5em;
+    line-height: 1.3em;
+  }
+  section {
+    width: 82vw;
+  }
+  .menu li, .header2 li {
+    font-size: 1.5em;
+  }
+  label, legend {
+    font-size: 1.5em;
+  }
+  .accordion input[type=submit] {
+    font-size: 1.75em;
+  }
+.accordion ul {
+  width: 33vw;
+}
+.content {
+  width: 500%;
+    margin-left: -200%;
+    background-color:#777;
+    padding: 20px 0;
+}
+
+ /*accordion.css*/
+
+ input {
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked + div {
+  transition: all 1s;
+  height: auto;
+  opacity: 1;
+}
+
+input[type=checkbox]:checked + div p {
+  height: auto;
+  opacity: 1;
+}
+
+input:before {
+  font-family: FontAwesome;
+  content: "\f0fe";
+  position: absolute;
+  left: 15px;
+  visibility: visible;
+}
+
+input[type=checkbox]:checked:before {
+  content: "\f146";
+}
+
+label h3 {
+  display: inline-block;
+  position: relative;
+  left: 25px;
+}
+
+.answer,
+.answer p {
+  height: 0;
+  opacity: 0;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+article {
+  display: inline-block;
+}
+}
+@media screen and (min-width: 585px) {}
